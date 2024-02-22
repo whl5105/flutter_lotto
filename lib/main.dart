@@ -29,6 +29,7 @@ class _RandomNumberBall extends StatelessWidget {
 
   const _RandomNumberBall({required this.number, required this.isEmpty});
 
+  //숫자 범위에 따라 컬러 생성
   Color getColorForNumber(int number) {
     if (number >= 1 && number <= 10) {
       return Colors.yellow.shade700;
@@ -78,12 +79,14 @@ class _RandomNumberBall extends StatelessWidget {
 class RandomNumberAppState extends State<RandomNumberApp> {
   List<int> selectedNumbers = [];
 
+  // --랜덤하고 중복되지 않는 숫자를 생성하는 함수--
   void generateRandomNumbers() {
-    Set<int> uniqueNumbers = {};
+    Set<int> uniqueNumbers = {}; // Set - 중복된 값을 허용하지 않는 데이터 구조
 
+    // uniqueNumbers 길이 확인
     while (uniqueNumbers.length < 6) {
-      int randomNumber = Random().nextInt(45) + 1;
-      uniqueNumbers.add(randomNumber);
+      int randomNumber = Random().nextInt(45) + 1; // 0~44까지의 난수를 생성+1 = 1~45
+      uniqueNumbers.add(randomNumber); //uniqueNumbers에 중복된 값 존재시 - 추가 무시
     }
 
     setState(() {
@@ -105,6 +108,7 @@ class RandomNumberAppState extends State<RandomNumberApp> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                //-- 1열 번호  --
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: List.generate(
@@ -116,7 +120,7 @@ class RandomNumberAppState extends State<RandomNumberApp> {
                     ),
                   ),
                 ),
-                const SizedBox(width: 16),
+                //-- 2열 번호  --
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: List.generate(
@@ -132,6 +136,7 @@ class RandomNumberAppState extends State<RandomNumberApp> {
                   ),
                 ),
                 const SizedBox(height: 40),
+                //-- 번호뽑기 버튼  --
                 TextButton(
                   onPressed: () {
                     generateRandomNumbers();
@@ -140,8 +145,6 @@ class RandomNumberAppState extends State<RandomNumberApp> {
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10)),
                     backgroundColor: Colors.grey.shade700,
-
-                    // onPrimary: Colors.blue,	//글자색
                     minimumSize: const Size(200, 50), //width, height
                   ),
                   child: const Text(
@@ -156,10 +159,11 @@ class RandomNumberAppState extends State<RandomNumberApp> {
               ],
             ),
           ),
+
+          //-- 하단 이미지 --
           const Image(
             image: AssetImage('assets/lottoBall.png'),
             width: 200,
-            // height: 100,
             fit: BoxFit.fill,
           ),
           const SizedBox(height: 40),
