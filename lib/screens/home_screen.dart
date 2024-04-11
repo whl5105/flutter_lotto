@@ -6,7 +6,7 @@ import 'package:flutter_lotto/widgets/lottoResultsCard_widget.dart';
 import 'package:flutter_lotto/widgets/resultLinkBox_widget.dart';
 import 'package:intl/intl.dart';
 
-var f = NumberFormat('###,###,###,###');
+// var f = NumberFormat('###,###,###,###');
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
