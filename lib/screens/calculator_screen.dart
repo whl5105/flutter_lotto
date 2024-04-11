@@ -57,11 +57,11 @@ class CalculatorScreenState extends State<CalculatorScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xffF3F5FF),
+      backgroundColor: const Color(0xffF4F5F8),
       appBar: AppBar(
         title: const Text('로또 당첨금 계산기'),
         foregroundColor: Colors.black,
-        backgroundColor: const Color(0xffF3F5FF),
+        backgroundColor: const Color(0xffF4F5F8),
         shadowColor: Colors.black12,
       ),
       body: Padding(

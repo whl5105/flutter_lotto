@@ -31,14 +31,12 @@ class RandomNumberAppState extends State<RandomScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xffF3F5FF),
+      backgroundColor: const Color(0xffF4F5F8),
       appBar: AppBar(
-        title: const Text(
-          '랜덤 번호 뽑기',
-          // style: TextStyle(fontSize: 20, color: Colors.black),
-        ),
+        title: const Text('랜덤 번호 뽑기'),
+        elevation: 0, // 하단 그라데이션 제거
         foregroundColor: Colors.black,
-        backgroundColor: const Color(0xffF3F5FF),
+        backgroundColor: const Color(0xffF4F5F8),
         shadowColor: Colors.black12,
       ),
       body: Column(
