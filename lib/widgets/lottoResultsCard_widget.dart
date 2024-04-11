@@ -16,7 +16,7 @@ class LottoResultsCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final NumberFormat f = NumberFormat('###,###,###,###');
     return FutureBuilder<LottoResultModel>(
-      future: ApiService.getLottoResult(),
+      future: ApiService.getRealTimeLottoResult(),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return const CircularProgressIndicator(); // 로딩 중일 때 표시할 위젯

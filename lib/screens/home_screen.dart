@@ -15,15 +15,45 @@ class HomeScreen extends StatefulWidget {
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
+class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
+  const CustomAppBar({super.key});
+
+  @override
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16.0),
+      child: AppBar(
+        backgroundColor: const Color(0xffF4F5F8),
+        elevation: 0, // 하단 그라데이션 제거
+        leading: const SizedBox(
+          child: Image(
+            image: AssetImage('assets/logo.png'),
+          ),
+        ),
+        actions: const <Widget>[
+          SizedBox(
+            width: 24,
+            height: 24,
+            child: Image(
+              image: AssetImage('assets/bell.png'),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: const Color(0xffF3F5FF),
-      appBar: AppBar(
-        backgroundColor: const Color(0xffF3F5FF),
-      ),
-      body: const SafeArea(
+    return const Scaffold(
+      backgroundColor: Color(0xffF4F5F8),
+      appBar: CustomAppBar(),
+      body: SafeArea(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
           child: Column(
