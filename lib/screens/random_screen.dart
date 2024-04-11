@@ -37,7 +37,6 @@ class RandomNumberAppState extends State<RandomScreen> {
         elevation: 0, // 하단 그라데이션 제거
         foregroundColor: Colors.black,
         backgroundColor: const Color(0xffF4F5F8),
-        shadowColor: Colors.black12,
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
