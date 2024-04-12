@@ -41,6 +41,7 @@ dependencies:
   qr_code_dart_scan: ^0.7.5
   url_launcher: ^6.2.5
   intl: ^0.19.0
+  flutter_native_splash: ^2.4.0
 
 dev_dependencies:
   flutter_test:
