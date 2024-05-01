@@ -15,7 +15,6 @@ class _QrScannerScreenState extends State<QrScannerScreen> {
   Barcode? result;
   QRViewController? controller;
   late QRViewController _controller;
-  String scannedData = 'Scan a QR code';
 
   @override
   void reassemble() {
