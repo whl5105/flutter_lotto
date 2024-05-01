@@ -1,4 +1,6 @@
-<img src="assets/readme/logo.png">
+<p align="center">
+  <img src="assets/readme/logo.png" width='500px'>
+</p>
 
 > FE 스터디중 만들게된 로또 앱입니다.
 > 간단한 앱을 만들어보며 dart 언어를 학습하고 앱 개발을 도전해보는 시간이였습니다.
