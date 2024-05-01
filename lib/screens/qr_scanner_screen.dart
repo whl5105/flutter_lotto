@@ -15,6 +15,7 @@ class _QrScannerScreenState extends State<QrScannerScreen> {
   Barcode? result;
   QRViewController? controller;
   late QRViewController _controller;
+  String scannedData = 'Scan a QR code';
 
   @override
   void reassemble() {
@@ -61,6 +62,10 @@ class _QrScannerScreenState extends State<QrScannerScreen> {
             flex: 1,
             child: Center(
               child: Text('Qr 코드 용지를 사각 안에 맞혀 스캔해 주세요'),
+              // child: (result != null)
+              //     ? Text(
+              //         'Barcode Type: ${describeEnum(result!.format)}   Data: ${result!.code}')
+              //     : const Text('Qr 코드 용지를 사각 안에 맞혀 스캔해 주세요'),
             ),
           )
         ],
@@ -79,17 +84,10 @@ class _QrScannerScreenState extends State<QrScannerScreen> {
       }
     });
   }
+}
 
-  Future<void> _launchURL(String? urlCode) async {
-    if (urlCode != null) {
-      try {
-        Uri uri = Uri.parse(urlCode);
-        if (await canLaunchUrl(uri)) {
-          await launchUrl(uri);
-        }
-      } catch (e) {
-        print('Error launching URL: $e');
-      }
-    }
+Future _launchURL(String? url) async {
+  if (url != null && await canLaunch(url)) {
+    await launch(url);
   }
 }
