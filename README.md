@@ -15,7 +15,7 @@
 
 | 스플래시/메인                        | 실수령액 계산기                          | Qr 당첨 확인                     | 랜덤 번호 뽑기                       |
 | ------------------------------------ | ---------------------------------------- | -------------------------------- | ------------------------------------ |
-| <img src="assets/readme/splash.gif" width='200'> | <img src="assets/readme/calculator.gif" width='200'> | <img src="assets/readme/qr.gif" width='200'> | <img src="assets/readme/random.gif" width='200'> |
+| <img src="assets/readme/splash.gif"> | <img src="assets/readme/calculator.gif"> | <img src="assets/readme/qr.gif"> | <img src="assets/readme/random.gif"> |
 
 ## Development Setup
 
