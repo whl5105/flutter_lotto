@@ -14,6 +14,9 @@ class LottoResultsCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double itemWidth = (screenWidth - 100) * 0.9 / 8;
+
     final NumberFormat f = NumberFormat('###,###,###,###');
     return FutureBuilder<LottoResultModel>(
       future: ApiService.getRealTimeLottoResult(),
@@ -67,7 +70,7 @@ class LottoResultsCard extends StatelessWidget {
                           (item) => RandomBall(
                             number: item,
                             isEmpty: false,
-                            size: 35,
+                            size: itemWidth,
                           ),
                         )
                         .toList(),
@@ -79,7 +82,7 @@ class LottoResultsCard extends StatelessWidget {
                     RandomBall(
                         number: lottoResult.winningNumbers.last,
                         isEmpty: false,
-                        size: 35),
+                        size: itemWidth),
                   ],
                 ),
                 const SizedBox(height: 32),
